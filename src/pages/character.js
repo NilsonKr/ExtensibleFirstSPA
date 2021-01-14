@@ -7,12 +7,12 @@ const character = async () => {
     const id = getHash()
     const data = await getData(id)
     const view = `
-    <div class="Characters-inner">
+    <div class="Characters-inner"> 
         <article class="Characters-card">
             <img src="${data.image}" alt="${data.name}"/>
             <h2>${data.name}</h2>
         </article>
-        <article class="Characters-card">
+        <article class="Characters-card ">
             <h3>Episodes: <span>${data.episode.length}</span> </h3>
             <h3>Status: <span>${data.status}</span> </h3>
             <h3>Species: <span>${data.species}</span> </h3>

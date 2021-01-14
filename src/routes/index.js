@@ -8,6 +8,7 @@ import setDarkMode from '../routes/darkMode.js';
 
 const routes = {
     '/':home,
+    '/home':home,
     '/:id': character,
     '/contact': 'Contact',
 }
@@ -19,13 +20,13 @@ const router = async () => {
     let firstRender = true
     
     let hash = getHash()
-    console.log(hash)
     let route = await resolveRoutes(hash)
     let render = routes[route] ? routes[route] : error404
-    
     main.innerHTML = await render()
-    const body =  document.querySelector('body')
-    setDarkMode(null,firstRender)
+
+
+    //<-----------Call To darkMode or not--------------->
+    setDarkMode(hash,firstRender)
     const darkmode = document.getElementById('darkModeButton')
     darkmode.addEventListener('click', () => {
         setDarkMode(hash,false)
