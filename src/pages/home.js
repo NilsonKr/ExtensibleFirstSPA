@@ -8,7 +8,7 @@ const  home = async () => {
     const view = `
      <section class="Characters">
         ${data.results.map(char => `
-        <article class="Character-item">
+        <article class="Character-item" id="charHome">
             <a href="#/${char.id}/">
                 <img src="${char.image}" alt="${char.name}" />
                 <h2>${char.name}</h2>

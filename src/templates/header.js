@@ -1,6 +1,6 @@
 const header = () => {
     const view = `
-    <div class="Header-main">
+    <div class="Header-main" id="MainHeader">
         <div class="Header-logo">
             <h1>
             <a href="/">
@@ -12,7 +12,7 @@ const header = () => {
             <a href="#/about/">
                 About
             </a>
-            <button>
+            <button id="darkModeButton">
                 <span><i class="fas fa-sun"></i></span>
                 <span><i class="fas fa-moon"></i></span>
             </button>
@@ -21,5 +21,6 @@ const header = () => {
     `;
     return view
 }
+
 
 export default header
