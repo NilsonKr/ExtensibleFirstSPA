@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
 
+
+:root{
+    --blackDarkMode: #212121;
+    --grayDarkMode: #333;
+    --rosDarkMode: #f48fb1;
+    --darkRose:#aa647b;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -7,18 +16,77 @@ body {
   color: #3c484e;
   font-family: 'Open Sans', sans-serif;
 }
+.bodyDark{
+  background-color: var(--grayDarkMode);
+}
 
 .Header-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  box-shadow: 0px 10px 8px -10px rgba(0,0,0,.3);
 }
 
 .Header a {
+  cursor: pointer;
+  color: blue;
   text-decoration: none;
-  color: #15302C;
+}
+.Header-nav{
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+.Header-nav button{
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  border: none;
+  outline: none;
+  background-color: rgb(59, 67, 75);
+  border-radius: 500px;
+}
+.Header-nav button::after{
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: unset;
+  width: 35px;
+  height: 35px;
+  background-color: #F5F5F5;
+  border-radius: 100px;
+  transition: .3s ease all;
+  box-shadow: 0px 0px 3px 2px rgba(0,0,0,.3);
+}
+.Header-nav .darkMode {
+  background-color: rgb(255, 191, 53);
+}
+.Header-nav .darkMode::after {
+  left:unset;
+  right: 0;
+}
+.Header-nav button span{
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background: none;
+  color: white;
 }
 
+.HeaderDark{
+  background-color: var(--blackDarkMode);
+}
+.HeaderDark a{
+  color: #f48fb1; 
+}
 .Main {
   padding: 10px;
   grid-template-columns: minmax(auto, 976px);
@@ -68,8 +136,15 @@ body {
   text-align: left;
   margin: 20px;
 }
+.CharactersDark{
+  background-color: var(--blackDarkMode);
+  box-shadow: 0 0 10px 2px rgba(0,0,0,.2);
+}
+.CharactersDark h2,.CharactersDark h3{
+  color: #f3f3f3;
+}
 
-.Characters-item {
+.Character-item {
   text-decoration: none;
   box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
   border-radius: 5px;
@@ -79,13 +154,13 @@ body {
   animation-name: fade;
 }
 
-.Characters-item img {
+.Character-item img {
   width: 100%;
   height: auto;
   border-radius: 5px 5px 0 0;
 }
 
-.Characters-item h2 {
+.Character-item h2 {
   font-size: 18px;
   font-weight: 300;
   padding: 5px 10px;
@@ -93,9 +168,16 @@ body {
   justify-content: space-between;
 }
 
-.Characters-item a {
+.Character-item a {
   text-decoration: none;
-  color: #026C86;
+  color: green
+}
+.homeDarkMode{
+  background-color: var(--blackDarkMode);
+  box-shadow: 0 0 10px 2px rgba(0,0,0,.2);
+}
+.homeDarkMode a {
+  color : #aa647b;
 }
 
 @keyframes fade {
@@ -114,6 +196,9 @@ body {
   width: 20px;
   height: 20px;
   animation: spin 2s linear infinite;
+}
+.Erorr404Dark{
+  color: var(--darkRose);
 }
 
 @keyframes spin {
