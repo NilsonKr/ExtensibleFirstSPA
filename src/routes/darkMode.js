@@ -26,6 +26,9 @@ const setDarkMode = (hash,firstRender) => {
         document.getElementById('MainHeader').classList.toggle('HeaderDark')
         document.querySelector('#darkModeButton').classList.toggle('darkMode')
         body.classList.toggle('bodyDark')
+        if(hash === '/'){
+            document.querySelectorAll('#charHome').forEach(char => char.classList.toggle('homeDarkMode'))
+        }
         if(hash === 'home'){
             document.querySelectorAll('#charHome').forEach(char => char.classList.toggle('homeDarkMode'))
         }
